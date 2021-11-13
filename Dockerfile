@@ -6,10 +6,9 @@
 # https://nicolaw.uk/#TiddlyWiki
 #
 
-ARG BASE_IMAGE=node:17.0-alpine3.13
+ARG BASE_IMAGE=node:17-alpine
 FROM ${BASE_IMAGE}
 
-ARG BASE_IMAGE=node:17.0-alpine3.13
 ARG TW_VERSION=5.2.0
 ARG USER=node
 
@@ -24,6 +23,8 @@ LABEL author="Nicola Worthington <nicolaw@tfb.net>" \
       com.tiddlywiki.homepage="https://tiddlywiki.com" \
       com.tiddlywiki.author="Jeremy Ruston" \
       com.tiddlywiki.vcs="https://github.com/Jermolene/TiddlyWiki5"
+
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories
 
 RUN apk add libcap \
  && setcap 'cap_net_bind_service=+ep' /usr/local/bin/node \

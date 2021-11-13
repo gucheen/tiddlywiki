@@ -31,15 +31,18 @@ main () {
   fi
 
   # shellcheck disable=SC2086
-  exec /usr/bin/env node $NODE_OPTIONS "$TW5" "$TW_WIKINAME" --server \
-    "$TW_PORT" \
-    "$TW_ROOTTIDDLER" \
-    "$TW_RENDERTYPE" \
-    "$TW_SERVETYPE" \
-    "$TW_USERNAME" \
-    "$TW_PASSWORD" \
-    "$TW_HOST" \
-    "$TW_PATHPREFIX"
+  exec /usr/bin/env node $NODE_OPTIONS "$TW5" "$TW_WIKINAME" --listen \
+    port="$TW_PORT" \
+    root-tiddler="$TW_ROOTTIDDLER" \
+    root-render-type="$TW_RENDERTYPE" \
+    root-serve-type="$TW_SERVETYPE" \
+    username="$TW_USERNAME" \
+    password="$TW_PASSWORD" \
+    host="$TW_HOST" \
+    path-prefix="$TW_PATHPREFIX"
+    credentials="$TW_CREDENTIALS"
+    readers="$TW_READERS"
+    writers="$TW_WRITERS"
 }
 
 main "$@"
