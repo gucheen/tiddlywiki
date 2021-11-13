@@ -24,8 +24,6 @@ LABEL author="Nicola Worthington <nicolaw@tfb.net>" \
       com.tiddlywiki.author="Jeremy Ruston" \
       com.tiddlywiki.vcs="https://github.com/Jermolene/TiddlyWiki5"
 
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories
-
 RUN apk add libcap \
  && setcap 'cap_net_bind_service=+ep' /usr/local/bin/node \
  && apk del libcap
