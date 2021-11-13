@@ -49,7 +49,10 @@ ENV TW_WIKINAME="mywiki" \
     TW_USERNAME="anonymous" \
     TW_PASSWORD="" \
     TW_HOST="0.0.0.0" \
-    TW_PATHPREFIX=""
+    TW_PATHPREFIX="" \
+    TW_CREDENTIALS="" \
+    TW_READERS="" \
+    TW_WRITERS=""
 
 EXPOSE 8080/tcp
 
