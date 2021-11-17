@@ -39,9 +39,9 @@ main () {
     username="$TW_USERNAME" \
     password="$TW_PASSWORD" \
     host="$TW_HOST" \
-    path-prefix="$TW_PATHPREFIX"
-    credentials="$TW_CREDENTIALS"
-    readers="$TW_READERS"
+    path-prefix="$TW_PATHPREFIX" \
+    credentials="$TW_CREDENTIALS" \
+    "readers=$TW_READERS" \
     writers="$TW_WRITERS"
 }
 
